@@ -17,8 +17,21 @@ def new_search(request):
     data = response.text
 
     soup = BeautifulSoup(data, features='html.parser')
-    post_titles = soup.find_all('a', {'class': 'result-title'})
-    print(post_titles[0])
+
+    post_listings = soup.find_all('li', {'class':'result-row'})
+
+   
+    final_post = []
+
+    for post in post_listings:
+        post_title = post.find(class_='result-title').text
+        post_url = post.find('a').get('href')
+        post_price = post.find(class_='result-price').text
+
+
+    print(post_title)
+    print(post_url)
+    print(post_price)
 
     suff_for_front_end = {
         'search': search,
