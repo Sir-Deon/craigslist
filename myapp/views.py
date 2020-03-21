@@ -28,12 +28,10 @@ def new_search(request):
         post_url = post.find('a').get('href')
         post_price = post.find(class_='result-price').text
 
-
-    print(post_title)
-    print(post_url)
-    print(post_price)
+        final_post.append((post_title, post_url, post_price))
 
     suff_for_front_end = {
         'search': search,
+        'final_posts': final_post,
     }
     return render(request, 'my_app/new_search.html', suff_for_front_end)
