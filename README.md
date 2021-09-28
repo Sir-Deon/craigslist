@@ -1,2 +1,2 @@
 # craigslist
-Craigs list clone, was built to shappen on web scraping with python
+I built Craigs list clone, to learn web scraping with python
